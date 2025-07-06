@@ -1,0 +1,17 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Flutter 模板",
+  "home": "首頁",
+  "settings": "設置",
+  "language": "語言",
+  "theme": "主題",
+  "light": "淺色",
+  "dark": "深色",
+  "system": "跟隨系統",
+  "loading": "加載中...",
+  "error": "錯誤",
+  "retry": "重試",
+  "cancel": "取消",
+  "confirm": "確認",
+  "save": "保存"
+}
