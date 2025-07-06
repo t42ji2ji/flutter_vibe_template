@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vibe_template/l10n/generated/app_localizations.dart';
 import 'package:go_router/go_router.dart';
+import 'package:oktoast/oktoast.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -20,7 +21,7 @@ class HomePage extends ConsumerWidget {
           ),
         ],
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -29,6 +30,15 @@ class HomePage extends ConsumerWidget {
             Text(
               'Welcome to Flutter Vibe Template!',
               style: TextStyle(fontSize: 18),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                showToast(
+                  "Hi there, this is a toast message",
+                  position: ToastPosition.bottom,
+                );
+              },
+              child: Text('Show Toast'),
             ),
           ],
         ),
