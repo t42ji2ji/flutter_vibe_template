@@ -2,6 +2,36 @@
 
 A Flutter Template For All Vibe Coders
 
+## Quick Start - Initialize New Project
+
+Use the `init.sh` script to quickly create a new Flutter project from this template:
+
+### Usage
+```bash
+./init.sh <bundle_id> <app_name>
+```
+
+### Example
+```bash
+./init.sh com.example.myapp "My Amazing App"
+```
+
+### What it does:
+1. ✅ Copies the entire template to a new directory (in parent folder)
+2. ✅ Removes `.git` directory for fresh start
+3. ✅ Automatically sets up the new Bundle ID
+4. ✅ Changes the app name across all platforms
+5. ✅ Runs `flutter pub get` to install dependencies
+6. ✅ Ready to develop immediately!
+
+### Parameters:
+- `bundle_id`: Your app's bundle identifier (e.g., `com.company.appname`)
+- `app_name`: Display name for your app (e.g., `"My App Name"`)
+
+The script will create a new project directory based on your app name (spaces converted to underscores, lowercase).
+
+---
+
 ## Getting Started
 
 Run this command to change the package name for both platforms.
