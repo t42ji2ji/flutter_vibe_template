@@ -43,6 +43,11 @@ dependencies:
   # Image Caching
   cached_network_image: ^3.4.1
 
+  # Authentication
+  supabase_flutter: ^2.8.0
+  sign_in_with_apple: ^6.1.2
+  crypto: ^3.0.6
+
   # Renaming
   rename_app: ^1.6.5
 
@@ -54,6 +59,8 @@ dependencies:
   json_annotation: ^4.9.0
   collection: ^1.19.1
   flutter_launcher_icons: ^0.14.4
+
+  flutter_dotenv: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +90,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
