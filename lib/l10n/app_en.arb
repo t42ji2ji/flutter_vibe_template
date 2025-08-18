@@ -46,5 +46,13 @@
   "save": "Save",
   "@save": {
     "description": "Save button text"
+  },
+  "termsOfService": "Terms of Service",
+  "@termsOfService": {
+    "description": "Terms of Service link text"
+  },
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy Policy link text"
   }
 }

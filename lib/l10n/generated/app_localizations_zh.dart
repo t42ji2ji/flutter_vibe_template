@@ -49,4 +49,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get save => '保存';
+
+  @override
+  String get termsOfService => '服務條款';
+
+  @override
+  String get privacyPolicy => '隱私政策';
 }

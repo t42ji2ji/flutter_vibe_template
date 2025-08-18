@@ -13,5 +13,7 @@
   "retry": "重試",
   "cancel": "取消",
   "confirm": "確認",
-  "save": "保存"
+  "save": "保存",
+  "termsOfService": "服務條款",
+  "privacyPolicy": "隱私政策"
 }

@@ -1,8 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(flutter pub:*)",
+      "Bash(flutter gen-l10n:*)",
+      "Bash(flutter analyze:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

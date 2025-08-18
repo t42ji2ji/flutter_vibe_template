@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_vibe_template/core/providers/dot_env_provider.dart';
 import 'package:flutter_vibe_template/l10n/generated/app_localizations.dart';
 import 'package:oktoast/oktoast.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'core/providers/locale_provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
+  var ref = ProviderContainer();
+  final dotEnv = ref.read(dotEnvProvider);
+  await Supabase.initialize(
+    url: dotEnv.supabaseUrl,
+    anonKey: dotEnv.supabaseAnonKey,
+  );
   runApp(const ProviderScope(child: MyApp()));
 }
 

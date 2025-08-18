@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_vibe_template/core/providers/dot_env_provider.dart';
 import 'package:flutter_vibe_template/core/providers/locale_provider.dart';
 import 'package:flutter_vibe_template/core/providers/theme_provider.dart';
 import 'package:flutter_vibe_template/l10n/generated/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -12,6 +14,7 @@ class SettingsPage extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final themeMode = ref.watch(themeNotifierProvider);
     final locale = ref.watch(localeNotifierProvider);
+    final dotEnv = ref.watch(dotEnvProvider);
 
     String themeModeToString(ThemeMode mode) {
       switch (mode) {
@@ -55,6 +58,19 @@ class SettingsPage extends ConsumerWidget {
                 title: Text(l10n.theme),
                 subtitle: Text(themeModeToString(theme)),
                 onTap: () => _showThemeDialog(context, ref),
+              ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.description),
+                title: Text(l10n.termsOfService),
+                trailing: const Icon(Icons.open_in_new),
+                onTap: () => _launchUrl(dotEnv.termsOfServiceUrl),
+              ),
+              ListTile(
+                leading: const Icon(Icons.privacy_tip),
+                title: Text(l10n.privacyPolicy),
+                trailing: const Icon(Icons.open_in_new),
+                onTap: () => _launchUrl(dotEnv.privacyPolicyUrl),
               ),
             ],
           ),
@@ -147,5 +163,12 @@ class SettingsPage extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      debugPrint('Could not launch $url');
+    }
   }
 }

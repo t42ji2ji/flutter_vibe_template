@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vibe_template/core/providers/auth_notifier.dart';
+import 'package:flutter_vibe_template/features/auth/models/auth_state.dart';
+import 'package:flutter_vibe_template/features/auth/providers/auth_provider.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/models/auth_state.dart';
-import '../../features/auth/providers/auth_provider.dart';
 import '../../features/auth/screens/login_screen.dart';
 import '../../features/auth/screens/splash_screen.dart';
 import '../../features/home/home_page.dart';
@@ -14,7 +14,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
   final authNotifierWrapper = ref.watch(authNotifierWrapperProvider);
 
   return GoRouter(
-    initialLocation: '/splash',
+    initialLocation: '/',
     refreshListenable: authNotifierWrapper,
     redirect: (context, state) {
       final authState = ref.read(authNotifierProvider);
