@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vibe_template/core/providers/dot_env_provider.dart';
+import 'package:flutter_vibe_template/features/auth/providers/revenuecat_provider.dart';
 import 'package:flutter_vibe_template/l10n/generated/app_localizations.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -17,6 +18,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   var ref = ProviderContainer();
   final dotEnv = ref.read(dotEnvProvider);
+  ref.read(revenucatServiceProvider);
   await Supabase.initialize(
     url: dotEnv.supabaseUrl,
     anonKey: dotEnv.supabaseAnonKey,
