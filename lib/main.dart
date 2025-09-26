@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vibe_template/core/providers/dot_env_provider.dart';
 import 'package:flutter_vibe_template/features/auth/providers/revenuecat_provider.dart';
-import 'package:flutter_vibe_template/l10n/generated/app_localizations.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -46,7 +45,6 @@ class MyApp extends ConsumerWidget {
             darkTheme: AppTheme.darkTheme,
             locale: loc,
             localizationsDelegates: const [
-              AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
